@@ -1,5 +1,6 @@
 const pokemonContainer = document.getElementById("pokeContainer");
-const pokemonNumber = 30;
+const buttonPokemon = document.getElementById("btnPokemon");
+const pokemonNumber = 100;
 
 // color of type each element pokemon
 const colors = {
@@ -13,7 +14,7 @@ const colors = {
     poison: '#4b0082',
     bug: '#ffce0a',
     dragon: '#97b3e6',
-    psychic: '#eaeda1',
+    psychic: '#8a817c',
     flying: '#d6daff',
     fighting: '#E6E0D4',
     normal: '#F5F5F5'
@@ -55,6 +56,10 @@ const getPokemon = async id => {
 
 // end
 
+buttonPokemon.addEventListener('click', function() {
+    fetchPokemon();
+});
+
 function createPokemonCard(pokemonData) {
     const pokemonElement = document.createElement('div');
     pokemonElement.classList.add('pokemon');
@@ -84,5 +89,3 @@ function createPokemonCard(pokemonData) {
 
     pokemonContainer.appendChild(pokemonElement);
 }
-
-fetchPokemon();
